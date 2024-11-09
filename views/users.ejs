@@ -1,0 +1,23 @@
+<!-- views/users.ejs -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Người Dùng</title>
+</head>
+<body>
+  <h2>Danh Sách Người Dùng</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <li>
+        <%= user.name %> - <%= user.email %>
+        <a href="/edit/<%= user._id %>">Sửa</a>
+        <a href="/delete/<%= user._id %>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">Thêm người dùng mới</a>
+</body>
+</html>
